@@ -44,7 +44,25 @@ var app = {
             + '<li data-icon="arrow-r">UUID: ' + device.uuid + '</li>'
             + '<li data-icon="arrow-l">Version: ' + device.version + '</li>'
             + '</ul>';
+        checkConnection: function() {
+            var networkState = navigator.connection.type;
+
+            var states = {};
+            states[Connection.UNKNOWN]  = 'Unknown connection';
+            states[Connection.ETHERNET] = 'Ethernet connection';
+            states[Connection.WIFI]     = 'WiFi connection';
+            states[Connection.CELL_2G]  = 'Cell 2G connection';
+            states[Connection.CELL_3G]  = 'Cell 3G connection';
+            states[Connection.CELL_4G]  = 'Cell 4G connection';
+            states[Connection.CELL]     = 'Cell generic connection';
+            states[Connection.NONE]     = 'No network connection';
+
+            alert('Connection type: ' + states[networkState]);
+        },
+        document.addEventListener("online", this.checkConnection);
+        document.addEventListener("offline", this.checkConnection);
     },
+        
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);

@@ -36,6 +36,8 @@ Si besoin :
 * cordova build
 * cordova emulate ios
 
+// On peut faire cordova build ; cordova emulate ios pour aller plus vite et enchainné les actions.
+
 ### Suite :
 
 Se rendre ici : /Applications/MAMP/htdocs/mateus17/exo-01/hello/platforms/ios puis double cliquer sur HelloWorld.xcodeproj

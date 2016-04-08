@@ -71,7 +71,6 @@ var app = {
                 $('#name').html(contacts[0].name.givenName + ' ' + contacts[0].name.familyName);
             };
 
-
             function onError(contactError){
                 alert('onError!');
             };
@@ -81,7 +80,6 @@ var app = {
             options.filter = finder;
             var fields = ["displayName", "name"];
             navigator.contacts.find(fields, onSuccess, onError, options);
-            
         });
     },
     
